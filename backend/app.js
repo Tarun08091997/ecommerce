@@ -1,5 +1,6 @@
 const express = require('express')
 const dotenv = require('dotenv');
+const errorMiddleware = require("./middleware/error")
 
 // Route Imports
 const product = require("./routes/productRouter");
@@ -14,6 +15,12 @@ app.use(express.json());  // body parser
 app.use("/api/v1",product);
 
 
+
+
+
+//Middleware for error
+
+app.use(errorMiddleware);
 
 
 module.exports = app;
